@@ -1,8 +1,10 @@
 package com.example.demo2;
 
 import com.example.demo2.models.Answer;
+import com.example.demo2.models.AnswersUser;
 import com.example.demo2.models.Question;
 import com.example.demo2.models.Test;
+import com.example.demo2.repositoryes.AnswerRepositoryJpaImpl;
 import com.example.demo2.repositoryes.TestRepository;
 import com.example.demo2.services.TestService;
 import org.springframework.boot.SpringApplication;
@@ -37,6 +39,8 @@ public class Demo2Application {
 //        Test test = new Test(0, "Тест 1", 0.7f, questions);
 //        testService.saveTest(test);
 
+        AnswerRepositoryJpaImpl answerRepositoryJpa = run.getBean(AnswerRepositoryJpaImpl.class);
+        answerRepositoryJpa.saveAnswer(new AnswersUser(0,1l,1,1,1,true));
 
     }
 
