@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="col-sm-11">
+    <div class="">
+        <div class="">
+            <table>
+                <thead>
+                <tr>
+                    <th scope="col th-sm">Действие</th>
+                    <th scope="col th-sm">Название теста</th>
+                    <th scope="col th-sm">Проходной %</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr  th:each="s:${tests}">
+                    <td><a th:href="'/test/' + ${s.id}">
+                        <button class="btn btn-primary">Открыть редактор теста</button>
+                    </a>
+                    <td th:text="${s.name}"></td>
+                    <td th:text="${s.minScore}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

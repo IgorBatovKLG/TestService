@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<form action="/save-answer" method="get">
+    <div class="col-sm-11">
+        <div class="">
+            <div>
+                <input type="text" name="question" th:value="${question}">
+            </div>
+            <div>
+                <input type="text" name="answer1" th:value="${answer1}"/>
+            </div>
+            <div>
+                <input type="text" name="answer2" th:value="${answer2}"/>
+            </div>
+            <div>
+                <input type="text" name="answer3" th:value="${answer3}"/>
+            </div>
+            <div>
+                <input type="text" name="answer4" th:value="${answer4}"/>
+            </div>
+            <div>
+                <input type="text" name="idQuestion" th:value="${idQuestion}"/>
+            </div>
+            <div>
+                <input type="text" name="idTest" th:value="${idTest}"/>
+            </div>
+            <button type="submit" >submit</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>
