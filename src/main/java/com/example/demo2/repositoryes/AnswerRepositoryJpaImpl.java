@@ -1,6 +1,7 @@
 package com.example.demo2.repositoryes;
 
-import com.example.demo2.models.AnswersUser;
+import com.example.demo2.models.AnsweredQuestions;
+import com.example.demo2.models.ListQuestionsUser;
 import com.example.demo2.models.Test;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -17,7 +18,7 @@ public class AnswerRepositoryJpaImpl implements AnswerRepository {
 
 
     @Override
-    public void saveAnswer(AnswersUser answersUser) {
+    public void saveAnswer(AnsweredQuestions answersUser) {
         em.createNativeQuery("insert into answers_users (id_user, id_test, id_question, id_answer, is_correct) values (?,?,?,?,?)")
                 .setParameter(1, answersUser.getIdUser())
                 .setParameter(2, answersUser.getIdTest())
@@ -30,6 +31,15 @@ public class AnswerRepositoryJpaImpl implements AnswerRepository {
     @Override
     public Test find(int id) {
         return em.find(Test.class, id);
+    }
+
+    @Override
+    public void createListAnswers(ListQuestionsUser listAnswersUser){
+        em.createNativeQuery("insert into list_answers_users (id_user, id_test, id_questions) values (?,?,?)")
+                .setParameter(1, listAnswersUser.getIdUser())
+                .setParameter(2, listAnswersUser.getIdTest())
+                .setParameter(3, listAnswersUser.getListIdQuestions())
+                .executeUpdate();
     }
 
 }

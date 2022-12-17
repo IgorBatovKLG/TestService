@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "answers_users")
-public class AnswersUser {
+public class AnsweredQuestions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -26,5 +26,4 @@ public class AnswersUser {
     private int idAnswer;
     @Column(name = "is_correct")
     private boolean isCorrect;
-
 }
